@@ -1,8 +1,10 @@
-# PocSampleCommands
+# Poc Sample Commands
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/poc_sample_commands`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/poc_sample_commands`.
 
-TODO: Delete this and the text above, and describe your gem
+When using the source code for this gem, start by running `bin/setup` to install locally
+
+To experiment with that code, run `bin/console` for an interactive prompt or run `exe/poc_sample_commands` to see a list of commands.
 
 ## Installation
 
@@ -14,11 +16,15 @@ gem 'poc_sample_commands'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install poc_sample_commands
+```bash
+gem install poc_sample_commands
+```
 
 ## Usage
 
@@ -41,3 +47,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the PocSampleCommands project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/poc_sample_commands/blob/master/CODE_OF_CONDUCT.md).
+
+## Copyright
+
+Copyright (c) David. See [MIT License](LICENSE.txt) for further details.
