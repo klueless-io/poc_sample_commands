@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'guard-rake'
+  gem 'guard-rspec'
   # pry on steroids
   gem 'jazz_fingers'
   gem 'rake', '~> 12.0'
