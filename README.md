@@ -1,8 +1,10 @@
 # Poc Sample Commands
 
+> POC Sample Commands is a command line tool for demontrating various commands using TTY gems
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/poc_sample_commands`.
 
-When using the source code for this gem, start by running `bin/setup` to install locally
+When using the source code for this gem, start by running `bin/setup` to install locally or `bundle install`
 
 To experiment with that code, run `bin/console` for an interactive prompt or run `exe/poc_sample_commands` to see a list of commands.
 
