@@ -28,6 +28,9 @@
 *.a
 mkmf.log
 
+# Gems should not use a Gemfile.lock
+Gemfile.lock
+
 # rspec failure tracking
 .rspec_status
 
