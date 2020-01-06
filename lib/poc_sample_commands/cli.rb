@@ -17,5 +17,21 @@ module PocSampleCommands
       puts 'v' + PocSampleCommands::VERSION
     end
     map %w[--version -v] => :version
+
+    #
+    # file
+    #
+    desc 'file SUBCOMMAND', 'Sample uses for the tty-file gem via command'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def file(subcommand)
+      if options[:help]
+        invoke :help, ['file']
+      else
+        require_relative 'commands/file'
+        PocSampleCommands::Commands::File.new(subcommand, options).execute
+      end
+    end
   end
 end
