@@ -13,4 +13,5 @@ group :development, :test do
   # this is used for cmdlets 'self-executing gems'
   gem 'rake-compiler'
   gem 'rspec', '~> 3.0'
+  gem 'rubocop'
 end

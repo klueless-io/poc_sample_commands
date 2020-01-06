@@ -5,7 +5,7 @@ require 'poc_sample_commands/commands/setup'
 RSpec.describe PocSampleCommands::Commands::Setup do
   it 'executes `setup` command successfully' do
     output = StringIO.new
-    folder = Dir.tmpdir
+    folder = nil
     options = {}
     command = PocSampleCommands::Commands::Setup.new(folder, options)
 
