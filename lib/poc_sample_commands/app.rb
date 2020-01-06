@@ -12,6 +12,7 @@ module PocSampleCommands
       @config.filename = 'poc_sample_commands'
       @config.extname = '.yml'
       @config.append_path Dir.pwd # Dir.home
+      
     end
 
     def self.config
