@@ -2,7 +2,7 @@
 
 require 'thor'
 
-require 'tty-config'
+require 'tty-app'
 
 module PocSampleCommands
   # Handle the global access such as configuration
