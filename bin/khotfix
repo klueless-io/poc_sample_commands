@@ -121,8 +121,8 @@ VERSION=`git tag | sort -V | tail -1`
 lkv "CURENT VERSION" "${VERSION}"
 
 # NOTE, if you don't have a TAG then you might need to manually do
-# git flow hotfix start v0.01.001
-# git flow hotfix finish v0.01.001
+# git flow hotfix start v0.1.1
+# git flow hotfix finish v0.1.1
 
 # Verify its format
 [[ "`git tag | sort -V | tail -1`"  =~ ^v[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,3}$ ]] || exit_error "Bad version format, version=${VERSION}"

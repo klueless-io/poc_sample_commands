@@ -13,24 +13,22 @@ RSpec.describe PocSampleCommands::App do
   let(:config) { PocSampleCommands::App.config }
 
   before do
-    # config.filename = @tmp_config_file
     config.append_path @tmp_dir
-    # config.set(:sample_folder, value: @tmp_dir)
-    # config.write force: true
   end
 
   it 'should have config object' do
     expect(config).to_not be_nil
   end
 
-  it 'should have a sample folder for storing assets' do
-    puts @tmp_config_file
-    puts @tmp_dir
-    puts config.filename
-    puts config.extname
-    puts config.persisted?
-    # puts config.sample_folder
-  end
+  # it 'should print some data' do
+  #   puts @tmp_config_file
+  #   puts @tmp_dir
+  #   puts config.filename
+  #   puts config.extname
+  #   puts config.persisted?
+  #   puts PocSampleCommands::App.sample_folder
+  #   puts PocSampleCommands::App.relative_template_folder
+  # end
 
   it 'should set sample folder' do
     config.set(:sample_folder, value: @tmp_dir)
@@ -43,5 +41,15 @@ RSpec.describe PocSampleCommands::App do
     config.write force: true
     expect(config.persisted?).to be_truthy
     expect(config.fetch(:sample_folder)).to eq(@tmp_dir)
+  end
+
+  it 'should have default relative template folder' do
+    expect(config.fetch(:relative_template_folder)).to eq('.')
+  end
+
+  it 'should set relative template folder' do
+    config.set(:relative_template_folder, value: 'lib/poc_sample_commands')
+    config.write force: true
+    expect(config.fetch(:relative_template_folder)).to eq('lib/poc_sample_commands')
   end
 end
