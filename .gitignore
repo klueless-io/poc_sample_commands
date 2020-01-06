@@ -12,6 +12,7 @@
 /bin/runonce/
 
 /.bundle/
+/.history/
 /.yardoc
 /_yardoc/
 /coverage/
