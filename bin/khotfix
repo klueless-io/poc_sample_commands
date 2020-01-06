@@ -117,7 +117,7 @@ SCRIPT_DIR=`dirname $0`
 l_title 'GET VERSION NUMBER'
 
 # Get the last tag version
-VERSION=`git tag | tail -1`
+VERSION=`git tag | sort -V | tail -1`
 lkv "CURENT VERSION" "${VERSION}"
 
 # NOTE, if you don't have a TAG then you might need to manually do
@@ -125,7 +125,7 @@ lkv "CURENT VERSION" "${VERSION}"
 # git flow hotfix finish v0.01.001
 
 # Verify its format
-[[ "`git tag | tail -1`"  =~ ^v[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,3}$ ]] || exit_error "Bad version format, version=${VERSION}"
+[[ "`git tag | sort -V | tail -1`"  =~ ^v[0-9]{1,2}.[0-9]{1,2}.[0-9]{1,3}$ ]] || exit_error "Bad version format, version=${VERSION}"
 # extract the version components
 IFS=. read MAJOR_VERSION MINOR_VERSION PATCH_VERSION <<< "${VERSION}"
 
