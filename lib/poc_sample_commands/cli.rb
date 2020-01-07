@@ -81,5 +81,21 @@ module PocSampleCommands
         PocSampleCommands::Commands::Spinner.new(subcommand, options).execute
       end
     end
+    
+    #
+    # markdown
+    #
+    desc 'markdown SUBCOMMAND', 'Sample uses for the tty-markdown gem via command'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def markdown(subcommand)
+      if options[:help]
+        invoke :help, ['markdown']
+      else
+        require_relative 'commands/markdown'
+        PocSampleCommands::Commands::Markdown.new(subcommand, options).execute
+      end
+    end
   end
 end

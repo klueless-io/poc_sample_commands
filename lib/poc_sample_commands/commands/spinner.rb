@@ -10,7 +10,7 @@ module PocSampleCommands
     # Command Name goes here
     class Spinner < PocSampleCommands::Command
       def initialize(subcommand, options)
-        @subcommand = (subcommand ||= '').to_sym
+          @subcommand = (subcommand ||= '').to_sym
         @options = options
       end
 
@@ -28,12 +28,6 @@ module PocSampleCommands
           good_bad
         when :formats
           formats
-        when :formats1
-          formats1
-        when :formats2
-          formats2
-        when :formats3
-          formats3
         end
       end
 
@@ -232,15 +226,6 @@ module PocSampleCommands
         sp37.success
         sp38.success
 
-      end
-
-      def formats1
-      end
-
-      def formats2
-      end
-
-      def formats3
       end
 
     end
