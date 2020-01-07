@@ -54,7 +54,7 @@ Gem::Specification.new do |spec|
   # spec.add_dependency 'tty-prompt',      '~> 0.19'
   # spec.add_dependency 'tty-screen',      '~> 0.7'
   spec.add_dependency 'tty-spinner',     '~> 0.9'
-  # spec.add_dependency 'tty-table',       '~> 0.11.0'
+  spec.add_dependency 'tty-table',       '~> 0.11.0'
   # spec.add_dependency 'tty-tree',        '~> 0.3'
   # spec.add_dependency 'tty-which',       '~> 0.4'
   # spec.add_dependency 'equatable',       '~> 0.5'

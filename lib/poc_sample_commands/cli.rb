@@ -97,5 +97,21 @@ module PocSampleCommands
         PocSampleCommands::Commands::Markdown.new(subcommand, options).execute
       end
     end
+    
+    #
+    # table
+    #
+    desc 'table SUBCOMMAND', 'Sample uses for the tty-table gem via command - see: https://github.com/piotrmurach/tty-table'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def table(subcommand)
+      if options[:help]
+        invoke :help, ['table']
+      else
+        require_relative 'commands/table'
+        PocSampleCommands::Commands::Table.new(subcommand, options).execute
+      end
+    end
   end
 end
