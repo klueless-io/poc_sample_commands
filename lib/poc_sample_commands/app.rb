@@ -14,6 +14,7 @@ module PocSampleCommands
       @config.filename = 'poc_sample_commands'
       @config.extname = '.yml'
       @config.append_path Dir.pwd # Dir.home
+      @config.read
       @config.set(:relative_template_folder, value: '.')
     end
 
@@ -27,6 +28,10 @@ module PocSampleCommands
 
     def self.relative_template_folder
       config.fetch(:relative_template_folder)
+    end
+
+    def self.get_template_file(filename)
+      ::File.join('lib/poc_sample_commands', filename)
     end
 
   end
