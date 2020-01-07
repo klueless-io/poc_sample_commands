@@ -34,27 +34,10 @@ module PocSampleCommands
         when :binary
           binary?('templates/file/sample.png')
         end
-
-        # @output.puts 'OK'
-
-        #         puts '-' * 70
-        # puts 'sample folder:'
-        # puts '-' * 70
-        # puts sample_folder
-        
-        # puts '-' * 70
-        # puts 'relative template folder:'
-        # puts '-' * 70
-        # puts relative_template_folder
-        # puts '-' * 70
-        # puts 'template file:'
-        # puts '-' * 70
-        # puts get_template_file('templates/setup/sample.txt')
-        # puts '-' * 70
-
-
       end
 
+      private
+      
       def remove_file(target_file)
         target_file_path = ::File.join(app.sample_folder, target_file)
 
