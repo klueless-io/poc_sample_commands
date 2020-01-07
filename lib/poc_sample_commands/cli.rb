@@ -49,5 +49,21 @@ module PocSampleCommands
         PocSampleCommands::Commands::File.new(subcommand, options).execute
       end
     end
+    
+    #
+    # log
+    #
+    desc 'log SUBCOMMAND', 'Sample uses for the tty-logger gem via command'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def log(subcommand)
+      if options[:help]
+        invoke :help, ['log']
+      else
+        require_relative 'commands/log'
+        PocSampleCommands::Commands::Log.new(subcommand, options).execute
+      end
+    end
   end
 end
