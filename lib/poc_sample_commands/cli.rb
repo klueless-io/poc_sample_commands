@@ -101,7 +101,7 @@ module PocSampleCommands
     #
     # table
     #
-    desc 'table SUBCOMMAND', 'Sample uses for the tty-table gem via command - see: https://github.com/piotrmurach/tty-table'
+    desc 'table SUBCOMMAND', 'Sample uses for the tty-font gem via command - see: https://github.com/piotrmurach/tty-font'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -111,6 +111,22 @@ module PocSampleCommands
       else
         require_relative 'commands/table'
         PocSampleCommands::Commands::Table.new(subcommand, options).execute
+      end
+    end
+    
+    #
+    # font
+    #
+    desc 'font SUBCOMMAND', 'Sample uses for the tty-font gem via command - see: https://github.com/piotrmurach/tty-font'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def font(subcommand)
+      if options[:help]
+        invoke :help, ['font']
+      else
+        require_relative 'commands/font'
+        PocSampleCommands::Commands::Font.new(subcommand, options).execute
       end
     end
   end
