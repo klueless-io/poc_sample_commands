@@ -21,7 +21,6 @@ module PocSampleCommands
       def execute(_input: $stdin, output: $stdout)
         output.puts 'OK'
 
-        # Log some data
         case @subcommand
         when :simple_log
           simple_log
