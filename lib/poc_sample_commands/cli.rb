@@ -65,5 +65,21 @@ module PocSampleCommands
         PocSampleCommands::Commands::Log.new(subcommand, options).execute
       end
     end
+    
+    #
+    # spinner
+    #
+    desc 'spinner SUBCOMMAND', 'Sample uses for the tty-spinner gem via command'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def spinner(subcommand)
+      if options[:help]
+        invoke :help, ['spinner']
+      else
+        require_relative 'commands/spinner'
+        PocSampleCommands::Commands::Spinner.new(subcommand, options).execute
+      end
+    end
   end
 end
