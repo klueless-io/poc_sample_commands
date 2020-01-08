@@ -117,5 +117,11 @@ module PocSampleCommands
       require 'tty-which'
       TTY::Which.exist?(*args)
     end
+
+    def heading(heading)
+      puts '-' * 70
+      puts heading
+      puts '-' * 70
+    end
   end
 end
