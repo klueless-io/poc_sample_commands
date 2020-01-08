@@ -10,7 +10,7 @@ RSpec.describe '`poc_sample_commands file` command', type: :cli do
       Options:
         -h, [--help], [--no-help]  # Display usage information
 
-      Sample uses for the tty-file gem via command
+      Sample uses for the tty-file gem - see: https://github.com/piotrmurach/tty-table
     OUT
 
     expect(output).to eq(expected_output)

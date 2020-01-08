@@ -10,7 +10,7 @@ RSpec.describe '`poc_sample_commands font` command', type: :cli do
       Options:
         -h, [--help], [--no-help]  # Display usage information
 
-      Sample uses for the tty-font gem via command - see: https://github.com/piotrmurach/tty-font
+      Sample uses for the tty-font gem - see: https://github.com/piotrmurach/tty-font
     OUT
 
     expect(output).to eq(expected_output)
