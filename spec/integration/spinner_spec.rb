@@ -10,7 +10,7 @@ RSpec.describe '`poc_sample_commands spinner` command', type: :cli do
       Options:
         -h, [--help], [--no-help]  # Display usage information
 
-      Sample uses for the tty-spinner gem via command
+      Sample uses for the tty-spinner gem - see: https://github.com/piotrmurach/tty-spinner
     OUT
 
     expect(output).to eq(expected_output)

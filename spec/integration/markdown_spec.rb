@@ -10,7 +10,7 @@ RSpec.describe '`poc_sample_commands markdown` command', type: :cli do
       Options:
         -h, [--help], [--no-help]  # Display usage information
 
-      Sample uses for the tty-markdown gem via command
+      Sample uses for the tty-markdown gem - see: https://github.com/piotrmurach/tty-table
     OUT
 
     expect(output).to eq(expected_output)
