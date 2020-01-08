@@ -86,8 +86,12 @@ module PocSampleCommands
       end
 
       def heading(heading)
-        puts '-' * 70
+        line
         puts heading
+        line
+      end
+
+      def line
         puts '-' * 70
       end
 
