@@ -21,14 +21,15 @@ module PocSampleCommands
       def execute(input: $stdin, output: $stdout)
         prompt = TTY::Prompt.new
 
-        description = prompt.multiline("Description?")
+        heading prompt.multiline("Description (multi line)?")
 
-        heading 'Muliline description'
-        puts description
+        heading prompt.multiline("Description - see prompt -->?", default: 'A super sweet prompt.')
 
-        description = prompt.multiline("Description - see prompt -->?", default: 'A super sweet prompt.')
-
-
+        heading prompt.multiline("Description (dsl)?") do |q|
+          q.default 'A super sweet prompt.'
+          q.help 'Press thy ctrl+d to end'
+        end
+        
         return :gui
       end
     end
