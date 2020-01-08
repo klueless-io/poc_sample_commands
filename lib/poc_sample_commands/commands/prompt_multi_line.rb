@@ -21,6 +21,14 @@ module PocSampleCommands
       def execute(input: $stdin, output: $stdout)
         prompt = TTY::Prompt.new
 
+        description = prompt.multiline("Description?")
+
+        heading 'Muliline description'
+        puts description
+
+        description = prompt.multiline("Description - see prompt -->?", default: 'A super sweet prompt.')
+
+
         return :gui
       end
     end
