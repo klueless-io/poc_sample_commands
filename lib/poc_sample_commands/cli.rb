@@ -41,7 +41,7 @@ module PocSampleCommands
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
-    def file(subcommand)
+    def file(subcommand = :gui)
       if options[:help]
         invoke :help, ['file']
       else
@@ -57,7 +57,7 @@ module PocSampleCommands
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
-    def log(subcommand)
+    def log(subcommand = :gui)
       if options[:help]
         invoke :help, ['log']
       else
@@ -73,7 +73,7 @@ module PocSampleCommands
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
-    def spinner(subcommand)
+    def spinner(subcommand = :gui)
       if options[:help]
         invoke :help, ['spinner']
       else
@@ -89,7 +89,7 @@ module PocSampleCommands
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
-    def markdown(subcommand)
+    def markdown(subcommand = :gui)
       if options[:help]
         invoke :help, ['markdown']
       else
@@ -105,7 +105,7 @@ module PocSampleCommands
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
-    def table(subcommand)
+    def table(subcommand = :gui)
       if options[:help]
         invoke :help, ['table']
       else
@@ -121,12 +121,28 @@ module PocSampleCommands
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
-    def font(subcommand)
+    def font(subcommand = :gui)
       if options[:help]
         invoke :help, ['font']
       else
         require_relative 'commands/font'
         PocSampleCommands::Commands::Font.new(subcommand, options).execute
+      end
+    end
+    
+    #
+    # progress_bar
+    #
+    desc 'progress_bar SUBCOMMAND', 'Sample uses for the tty-progressbar gem - see: https://github.com/piotrmurach/tty-progressbar'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def progress_bar(subcommand = :gui)
+      if options[:help]
+        invoke :help, ['progress_bar']
+      else
+        require_relative 'commands/progress_bar'
+        PocSampleCommands::Commands::ProgressBar.new(subcommand, options).execute
       end
     end
     
