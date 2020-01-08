@@ -10,7 +10,7 @@ RSpec.describe '`poc_sample_commands log` command', type: :cli do
       Options:
         -h, [--help], [--no-help]  # Display usage information
 
-      Sample uses for the tty-logger gem via command
+      Sample uses for the tty-logger gem - see: https://github.com/piotrmurach/tty-logger
     OUT
 
     expect(output).to eq(expected_output)

@@ -37,7 +37,7 @@ module PocSampleCommands
     #
     # file
     #
-    desc 'file SUBCOMMAND', 'Sample uses for the tty-file gem via command'
+    desc 'file SUBCOMMAND', 'Sample uses for the tty-file gem - see: https://github.com/piotrmurach/tty-table'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -53,7 +53,7 @@ module PocSampleCommands
     #
     # log
     #
-    desc 'log SUBCOMMAND', 'Sample uses for the tty-logger gem via command'
+    desc 'log SUBCOMMAND', 'Sample uses for the tty-logger gem - see: https://github.com/piotrmurach/tty-logger'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -69,7 +69,7 @@ module PocSampleCommands
     #
     # spinner
     #
-    desc 'spinner SUBCOMMAND', 'Sample uses for the tty-spinner gem via command'
+    desc 'spinner SUBCOMMAND', 'Sample uses for the tty-spinner gem - see: https://github.com/piotrmurach/tty-spinner'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -85,7 +85,7 @@ module PocSampleCommands
     #
     # markdown
     #
-    desc 'markdown SUBCOMMAND', 'Sample uses for the tty-markdown gem via command'
+    desc 'markdown SUBCOMMAND', 'Sample uses for the tty-markdown gem - see: https://github.com/piotrmurach/tty-table'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -101,7 +101,7 @@ module PocSampleCommands
     #
     # table
     #
-    desc 'table SUBCOMMAND', 'Sample uses for the tty-font gem via command - see: https://github.com/piotrmurach/tty-font'
+    desc 'table SUBCOMMAND', 'Sample uses for the tty-table gem - see: https://github.com/piotrmurach/tty-table'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -117,7 +117,7 @@ module PocSampleCommands
     #
     # font
     #
-    desc 'font SUBCOMMAND', 'Sample uses for the tty-font gem via command - see: https://github.com/piotrmurach/tty-font'
+    desc 'font SUBCOMMAND', 'Sample uses for the tty-font gem - see: https://github.com/piotrmurach/tty-font'
     method_option :help, aliases: '-h',
                          type: :boolean,
                          desc: 'Display usage information'
@@ -127,6 +127,22 @@ module PocSampleCommands
       else
         require_relative 'commands/font'
         PocSampleCommands::Commands::Font.new(subcommand, options).execute
+      end
+    end
+    
+    #
+    # prompt
+    #
+    desc 'prompt SUBCOMMAND', 'Sample uses for the tty-prompt gem - see: https://github.com/piotrmurach/tty-prompt'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def prompt(subcommand = :gui)
+      if options[:help]
+        invoke :help, ['prompt']
+      else
+        require_relative 'commands/prompt'
+        PocSampleCommands::Commands::Prompt.new(subcommand, options).execute
       end
     end
   end
